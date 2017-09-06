@@ -4,10 +4,12 @@ mongoose.connect(process.env.MONGODB_URI || "monogodb://localhost", {useMongoCli
 mongoose.Promise = global.Promise;
 const Schema = mongoose.schema;
 
+let Artist = require("./artist");
+
 const playlistSchema = new Schema({
   playlistName: String,
-  artist: artistSchema,
+  artist: [Artist.Schema],
 })
 
 
-module.exports.Playlist = require("./playlist.js"
+module.exports = Playlist;

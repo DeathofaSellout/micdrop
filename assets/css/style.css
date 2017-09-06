@@ -1,0 +1,26 @@
+.jumbotron {
+  background-image: url("http://sflonstage.com/wp-content/uploads/2015/01/Periphery-7038-Large.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.jumbotron .container {
+  height: 550px;
+}
+.jumbotron-header{
+  text-align: center;
+  color:#d2e0c9;
+  /*opacity: 0.5;*/
+  font-family: 'Anton', sans-serif;
+  color: black;
+}
+.footer{
+
+  font-family: 'Libre Barcode 39 Text', cursive;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+}
+.main{
+
+}

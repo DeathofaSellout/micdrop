@@ -1,11 +1,10 @@
 const express = require("express"); //requiring express
 const app = express(); //allowing us to use express
 
+app.set("view engine", "ejs");
+
 // Mount router middleware to the application middleware
 app.use(require("./resources"));
-
-// Request Promise
-const request = require("request-promise");
 
 // Body Parser
 const bodyParser = require("body-parser");

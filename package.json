@@ -1,0 +1,24 @@
+{
+  "name": "micdrop",
+  "version": "1.0.0",
+  "description": "micdrop, playlist app for GA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeathofaSellout/micdrop.git"
+  },
+  "author": "Erick Recher, Bryan Albini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeathofaSellout/micdrop/issues"
+  },
+  "homepage": "https://github.com/DeathofaSellout/micdrop#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10"
+  }
+}

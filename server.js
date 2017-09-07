@@ -3,14 +3,10 @@ const app = express(); //allowing us to use express
 
 app.set("view engine", "ejs");
 
-
-//Configure body parser to extract data from forms (and AJAX requests)
-=======
 // Mount router middleware to the application middleware
 app.use(require("./resources"));
 
-// Body Parser
-
+//Configure body parser to extract data from forms (and AJAX requests)
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

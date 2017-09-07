@@ -1,4 +1,3 @@
-
 const Playlist = require("../../../models/playlist");
 
 module.exports = (req,res) => {
@@ -12,4 +11,5 @@ module.exports = (req,res) => {
   newPlaylist.save((err) => {
     res.redirect("/playlists")
   });
+}
 const Playlist = require("../../../models/playlist");

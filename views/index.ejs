@@ -24,36 +24,66 @@
       <h1 class="jumbotron-header">Welcome to micdrop.com</h1>
       </div>
     </div>
-    <div class="main">
-      <!-- Button trigger modal -->
-      <button data-target="#playlistModal" data-toggle="modal" id="playlist-modal-toggle" type="button" class="btn btn-primary">
-        Create a Playlist
-      </button>
-      <!-- Modal -->
-        <div class="modal fade" id="playlistModal" tabindex="-1" role="dialog" aria-labelledby="playlistModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <!-- modal content -->
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="playlistModalLabel">Playlist Creator</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+  <div class="container">
+  	<div class="margin-top-20">
+  		<button data-toggle="modal" data-target="#add-playlist-modal" class="btn btn-primary">Add New Playlist</button>
+  	</div>
+    <!-- Add Playlist Modal -->
+    <div id="add-playlist-modal" class="modal fade">
+      <div class="modal-dialog"> <!-- why does this exist -->
+        <div class="modal-content">
+          <form method="POST" action="/playlists">
+            <div class="modal-header">
+              <button type="button" clas="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <!-- Why does this convention exist -->
+              <h4 class="modal-title">Add New Playlist</h4>
+            </div>
+            <div class="modal-body">
+              <div class="bold">
+                Name your playlist, based off a genre or mood:
               </div>
-              <div class="modal-body">
-                <p>Name your Playlist. Name it after a Genre or Specific Idea.</p>
-                <form>
-                  <input type="text">
-                  <input type="submit">
-                </form>
+              <div class="margin-top-20">
+                <input name="playlist[name]" type="text" class="form-control" placeholder="Djent Playlist"/>
               </div>
-              <div class="modal-footer">
+              <div class="bold margin-top-20">
+                Bands and Tracks (Insert comma between each track):
+              </div>
+              <div class="margin-top-20">
+                <input name="playlist[tracks]" type="text" class="form-control" placeholder="Periphery: Make Total Destory, Animals as Leaders: CAFO,"/>
+              </div>
+              <div class="bold margin-top-20">
+                Description
+              </div>
+              <div class="margin-top-20">
+                <textarea name="playlist[description]" class="form-control" placeholder="Music to rock your socks off too!"></textarea>
               </div>
             </div>
-          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save Your Playlist</button>
+            </div>
+          </form>
         </div>
-
       </div>
+    </div>
+</div>
+  <% playlists.forEach((playlist) => { %> -->
+  <!--One Playlist -->
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="margin-top-20">
+        <span class="bold">Playlist Name: </span><span><%= playlist.name %></span>
+      </div>
+      <div class="col-sm-9">
+        <div class="margin-top-20">
+          <span class="bold">Bands and Tracks: </span><span><%= playlist.tracks %></span>
+        </div>
+        <div>
+          <span class="bold">Description: </span><span><%= playlist.description %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }); %>
     <div class="footer">
       <h2>&copy;javascriptforlife & balbini</h2>
     </div>

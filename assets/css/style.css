@@ -20,7 +20,7 @@
   margin-top: 20px;
   text-align: center;
 }
-.main {
+.container {
   display: flex; /*dsetting the container to be flex*/
   justify-content: center; /*centering content*/
 }

@@ -12,6 +12,11 @@
   /*opacity: 0.5;*/
   font-family: 'Anton', sans-serif;
   color: black;
+
+}
+.jumbotron-header2{
+  text-align: center;
+  font-family: 'Anton', sans-serif;
 }
 .footer{
   font-family: 'Libre Barcode 39 Text', cursive;
@@ -20,7 +25,20 @@
   margin-top: 20px;
   text-align: center;
 }
-.main {
+.container-modal{
   display: flex; /*dsetting the container to be flex*/
   justify-content: center; /*centering content*/
+}
+.margin-top-20 {
+	margin-top:20px;
+}
+.playlist-container {
+	padding:20px 0;
+	background-color:#FFF;
+	transition:all 0.3s linear;
+}
+
+.playlist-container:hover {
+	background-color:#DDD;
+	transition:all 0.3s ease-in-out;
 }

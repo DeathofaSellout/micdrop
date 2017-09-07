@@ -1,15 +1,17 @@
-// where we setup our data requests to db
 const mongoose = require("mongoose");
-const Schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb://localhose/playlist_db");
+//Connect Mongoose to MongoDB
+mongoose.connect("mongodb://localhost/3000"); //What does the stuff in parentheses mean? Research MongoDB
 
-let Artist = require("./artist");
+//Create a new schema to model our "playlist" data
+const PlaylistSchema = new Schema({
+  name: String,
+  tracks: [String],
+  description: String,
+});
 
-const playlistSchema = new Schema({
-  playlistName: String,
-  artist: [Artist.Schema],
-})
-
-
+const Playlist = mongoose.model("Playlist", PlaylistSchema);
+//Export the model so we can require it later in the controllers (AKA business logic)
+// where we setup our data requests to db
 module.exports = Playlist;

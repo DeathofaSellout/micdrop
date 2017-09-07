@@ -7,13 +7,13 @@
     <title>Edit Playlist MicDrop.Com</title>
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!-- VENDOR SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!-- APPLICATION SCRIPTS -->
-    <script src="../assets/scripts/app.js"></script>
+    <script src="/scripts/app.js"></script>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton|Libre+Barcode+39+Text" rel="stylesheet">
@@ -25,12 +25,24 @@
      		<div>
      			<a href=""><< Go Back</a>
      		</div>
-     		<div class="bold margin-top-20">
-     			Playlist Name
-     		</div>
-     		<div class="margin-top-20">
-     			<input name="" type="text" class="form-control" value="" />
-     		</div>
+        <div class="bold margin-top-20">
+    			Playlist Name:
+    		</div>
+    		<div class="margin-top-20">
+    			<input name="playlist[name]" type="text" class="form-control" value="<%= playlist.name %>" />
+    		</div>
+    		<div class="bold margin-top-20">
+    			Bands and Tracks (use commas to separate each track):
+    		</div>
+    		<div class="margin-top-20">
+    			<input name="playlist[tracks]" type="text" class="form-control" value="<%= playlist.tracks %>" />
+    		</div>
+    		<div class="bold margin-top-20">
+    			Description:
+    		</div>
+    		<div class="margin-top-20">
+    			<input name="playlist[description]" type="text" class="form-control" value="<%= playlist.description %>" />
+    		</div>
         <div class="margin-top-20">
     			<a href="" class="btn btn-default">Cancel</a>
     			<button type="submit" class="btn btn-success">Submit Edits</button>

@@ -81,8 +81,13 @@
         <div>
           <span class="bold">Description: </span><span><%= playlist.description %></span>
         </div>
-        <button type="submit" class="btn btn-primary">Edit Playlist</button>
-        <button type="submit" class="btn btn-danger">Delete Playlist</button>
+        <div class="margin-top-20">
+          <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-default">Edit Playlist</a>
+        </div>
+        <!-- <button type="submit" class="btn btn-danger">Delete Playlist</button> -->
+        <form method="POST" action="/playlists/<%= playlist.id %>?_method=delete">
+       		<button type="submit" class="btn btn-danger">Delete</button>
+       	</form>
       </div>
     </div>
   </div>

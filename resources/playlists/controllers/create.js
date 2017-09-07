@@ -1,4 +1,5 @@
-const Playlist = require("../../../models");
+
+const Playlist = require("../../../models/playlist");
 
 module.exports = (req,res) => {
   //Step 1: Extract form data from form submission
@@ -11,4 +12,4 @@ module.exports = (req,res) => {
   newPlaylist.save((err) => {
     res.redirect("/playlists")
   });
-}
+const Playlist = require("../../../models/playlist");

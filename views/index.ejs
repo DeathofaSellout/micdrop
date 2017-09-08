@@ -8,10 +8,12 @@
   <!-- STYLESHEETS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
+
   <!-- VENDOR SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="/scripts/app.js"></script>
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton|Libre+Barcode+39+Text" rel="stylesheet">
@@ -34,7 +36,7 @@
           <form method="POST" action="/playlists">
             <div class="modal-header">
               <button type="button" clas="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <!-- Why does this convention exist -->
-              <h4 class="modal-title">Add New Playlist</h4>
+              <h4 class="modal-title">Add New Playlist and Get Rekt</h4>
             </div>
             <div class="modal-body">
               <div class="bold">
@@ -44,7 +46,7 @@
                 <input name="playlist[name]" type="text" class="form-control" placeholder="Djent Playlist"/>
               </div>
               <div class="bold margin-top-20">
-                Bands and Tracks (Insert comma between each track):
+                Bands and Tracks (Insert a comma between each track):
               </div>
               <div class="margin-top-20">
                 <input name="playlist[tracks]" type="text" class="form-control" placeholder="Periphery: Make Total Destory, Animals as Leaders: CAFO,"/>
@@ -58,7 +60,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save Your Playlist</button>
+              <button type="submit" class="btn btn-primary">Save Your Playlist, Fool</button>
             </div>
           </form>
         </div>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="modal-footer">
                     	<form method="POST" action="/playlists/<%= playlist.id %>?_method=delete">
-                    		<button type="submit" class="btn btn-danger">Delete</button>
+                    		<button type="submit" class="btn btn-danger">Delete Playlist, Sucka Fish</button>
                     	</form>
                       <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                     </div>

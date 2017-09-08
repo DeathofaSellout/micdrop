@@ -9,7 +9,7 @@ module.exports = (req, res) => {
   Playlist.findOneAndRemove({ _id: req.params.id }, function(err, foundPlaylist) {
     console.log("delete working");
     // action.children
-    res.json(foundPlaylist);
+    res.redirect("/");
   });
   // Wine.destroy = (id) => {
   //     return request({

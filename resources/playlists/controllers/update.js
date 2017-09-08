@@ -8,7 +8,7 @@ module.exports = (req, res) => {
       if(err) { console.log('playlistupdate error', err); }
           // Update each attribute with any possible attribute that may have been submitted in the body of the request
           // If that attribute isn't in the request body, default back to whatever it was before.
-      console.log(req.body);    
+      console.log(req.body);
       playlist.name = req.body.name;
       playlist.tracks = req.body.tracks;
       playlist.description = req.body.description;
@@ -17,7 +17,7 @@ module.exports = (req, res) => {
         if (err) {
             console.log("Saving edit isn't working");
         }
-        res.json(savedPlaylist);
+         res.redirect("/");
       });
   });
 }

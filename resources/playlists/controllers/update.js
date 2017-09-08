@@ -5,21 +5,19 @@ module.exports = (req, res) => {
   // Find the existing resource by ID
   Playlist.findById(req.params.id, (err, playlist) => {
       // Handle any possible database errors
-      if (err) {
-          res.status(500).send(err);
-      } else {
+      if(err) { console.log('playlistupdate error', err); }
           // Update each attribute with any possible attribute that may have been submitted in the body of the request
           // If that attribute isn't in the request body, default back to whatever it was before.
-          playlist.name = req.body.name || playlist.name;
-          playlist.tracks = req.body.tracks || playlist.tracks;
-          playlist.description = req.body.description || playlist.description;
-          // Save the updated document back to the database
-          playlist.save((err, playlist) => {
-              if (err) {
-                  res.status(500).send(err)
-              }
-              res.status(200).send(playlist);
-          });
-      }
+      console.log(req.body);    
+      playlist.name = req.body.name;
+      playlist.tracks = req.body.tracks;
+      playlist.description = req.body.description;
+      // Save the updated document back to the database
+      playlist.save((err, savedPlaylist) => {
+        if (err) {
+            console.log("Saving edit isn't working");
+        }
+        res.json(savedPlaylist);
+      });
   });
 }

@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MicDrop.Com</title>
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- VENDOR SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Libre+Barcode+39+Text" rel="stylesheet">
-  </head>
-  <body>
-    <div class="jumbotron">
-      <div class="container">
+  <title>MicDrop.Com</title>
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- VENDOR SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Libre+Barcode+39+Text" rel="stylesheet">
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
       <h1 class="jumbotron-header">Welcome to micdrop.com</h1>
       <h1 class="jumbotron-header2">Create your own Playlists</h1>
     </div>
-    </div>
+  </div>
   <div class="container-modal">
-  	<div class="margin-top-20">
-  		<button data-toggle="modal" data-target="#add-playlist-modal" class="btn btn-primary">Add New Playlist</button>
-  	</div>
+    <div class="margin-top-20">
+      <button data-toggle="modal" data-target="#add-playlist-modal" class="btn btn-primary">Add New Playlist</button>
+    </div>
     <!-- Add Playlist Modal -->
     <div id="add-playlist-modal" class="modal fade">
       <div class="modal-dialog"> <!-- why does this exist -->
@@ -66,34 +64,75 @@
         </div>
       </div>
     </div>
-</div>
+  </div>
   <% playlists.forEach((playlist) => { %>
-  <!--One Playlist -->
-  <div class="row">
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold">Playlist Name: </span><span><%= playlist.name %></span>
-      </div>
+    <!--One Playlist -->
+    <div class="row">
       <div class="col-sm-9">
         <div class="margin-top-20">
-          <span class="bold">Bands and Tracks: </span><span><%= playlist.tracks %></span>
+          <span class="bold">Playlist Name: </span><span><%= playlist.name %></span>
         </div>
-        <div>
-          <span class="bold">Description: </span><span><%= playlist.description %></span>
+        <div class="col-sm-9">
+          <div class="margin-top-20">
+            <span class="bold">Bands and Tracks: </span><span><%= playlist.tracks %></span>
+          </div>
+          <div>
+            <span class="bold">Description: </span><span><%= playlist.description %></span>
+          </div>
+          <div class="container-modal">
+            <div class="margin-top-20">
+              <button data-toggle="modal" data-target="#edit-playlist-modal-<%= playlist.id %>" class="btn btn-primary">Edit Playlist</button>
+            </div>
+            <div id="edit-playlist-modal-<%= playlist.id%>" class="modal fade">
+              <div class="modal-dialog"> <!-- why does this exist -->
+                <div class="modal-content">
+                  <form method="POST" action="/playlists/">
+                    <div class="modal-header">
+                      <button type="button" clas="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <!-- Why does this convention exist -->
+                      <h4 class="modal-title">Edit Playlist</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="bold">
+                        Playlist Name:
+                      </div>
+                      <div class="margin-top-20">
+                        <input name="playlist[name]" type="text" class="form-control" value="<%= playlist.name %>"/>
+                      </div>
+                      <div class="bold margin-top-20">
+                        Bands and Tracks (Insert comma between each track):
+                      </div>
+                      <div class="margin-top-20">
+                        <input name="playlist[tracks]" type="text" class="form-control" value="<%= playlist.tracks %>"/>
+                      </div>
+                      <div class="bold margin-top-20">
+                        Description
+                      </div>
+                      <div class="margin-top-20">
+                        <input name="playlist[description]" class="form-control" value="<%= playlist.description %>">
+                      </div>
+                    </div>
+                  </form>
+                    <div class="modal-footer">
+                    	<form method="POST" action="/playlists/<%= playlist.id %>?_method=delete">
+                    		<button type="submit" class="btn btn-danger">Delete</button>
+                    	</form>
+                      <form method="POST" action="/playlists/<%= playlist.id %>?_method=put">
+                        <button type="submit" class="btn btn-default">Save Changes</button>
+                      </form>
+                      <!-- <button id= "delete-playlist" type="submit" class="btn btn-danger" data-dismiss="modal">Delete</button> -->
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- <button type="submit" class="btn btn-danger">Delete Playlist</button> -->
+          </div>
         </div>
-        <div class="margin-top-20">
-          <a href="/playlists/<%= playlist.id %>/edit" class="btn btn-default">Edit Playlist</a>
-        </div>
-        <!-- <button type="submit" class="btn btn-danger">Delete Playlist</button> -->
-        <form method="POST" action="/playlists/<%= playlist.id %>?_method=delete">
-       		<button type="submit" class="btn btn-danger">Delete</button>
-       	</form>
       </div>
     </div>
-  </div>
-  <% }); %>
-    <div class="footer">
-      <h2>&copy;javascriptforlife & balbini</h2>
-    </div>
-  </body>
-</html>
+      <% }); %>
+      <div class="footer">
+        <h2>&copy;javascriptforlife & balbini</h2>
+      </div>
+    </body>
+    </html>

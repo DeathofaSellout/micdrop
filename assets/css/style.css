@@ -17,6 +17,7 @@
 .jumbotron-header2{
   text-align: center;
   font-family: 'Anton', sans-serif;
+  color: black;
 }
 .footer{
   font-family: 'Libre Barcode 39 Text', cursive;
@@ -26,8 +27,8 @@
   text-align: center;
 }
 .container-modal{
-  display: flex; /*dsetting the container to be flex*/
-  justify-content: center; /*centering content*/
+  display: flex;
+  justify-content: center;
 }
 .margin-top-20 {
 	margin-top:20px;

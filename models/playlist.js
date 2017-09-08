@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Connect Mongoose to MongoDB
-mongoose.connect("mongodb://localhost/playlist_db"); //What does the stuff in parentheses mean? Research MongoDB
+// mongoose.connect("mongodb://localhost/playlist_db"); //What does the stuff in parentheses mean? Research MongoDB
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/playlist_db");
 
 //Create a new schema to model our "playlist" data
 const PlaylistSchema = new Schema({

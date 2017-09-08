@@ -1,3 +1,6 @@
+body{
+  background-color: grey;
+}
 .jumbotron {
   background-image: url("http://sflonstage.com/wp-content/uploads/2015/01/Periphery-7038-Large.jpg");
   background-size: cover;
@@ -12,7 +15,6 @@
   /*opacity: 0.5;*/
   font-family: 'Anton', sans-serif;
   color: black;
-
 }
 .jumbotron-header2{
   text-align: center;
@@ -27,6 +29,9 @@
   text-align: center;
   padding: 20px;
 }
+.playlist-button{
+  color:black;
+}
 .container-modal{
   display: flex;
   justify-content: center;
@@ -35,8 +40,9 @@
 	margin-top:20px;
 }
 .playlist-container {
-	padding:20px 0;
-	background-color:#FFF;
+  margin: 10px;
+	padding: 10px 0;
+	background-color: grey;
 	transition:all 0.3s linear;
 }
 

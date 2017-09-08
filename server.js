@@ -14,18 +14,15 @@ app.use(methodOverride("_method"));
 
 //Tell express where to find the static assets served by OUR server (AKA not a CDN)
 app.use(express.static("./assets"));
-// Preparing port for Heroku deployment
+// Preparing port for Heroku deployment or localhost
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.redirect("/playlists", 302);
 });
-
 // Mount router middleware to the application middleware
 app.use(require("./resources"));
 
 app.listen(port, () => {
   console.log(`Server listening on ${port}`);
 });
-
-//have to study express. Understand .set .use .listen

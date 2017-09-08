@@ -1,7 +1,6 @@
 const Playlist = require("../../../models/playlist");
 
 module.exports = (req, res) => {
-  // This would likely be inside of a PUT request, since we're updating an existing document, hence the req.params.todoId.
   // Find the existing resource by ID
   Playlist.findById(req.params.id, (err, playlist) => {
       // Handle any possible database errors
